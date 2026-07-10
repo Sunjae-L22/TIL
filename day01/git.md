@@ -12,7 +12,7 @@
 - Repository : commit(버전을 만드는 행위)을 통해 Repository에 옮겨담는다
 
 ## Git으로 관리하기
-- git init : initialize -> (master)라는 곳에서 관리하고 있다고 확인 가능
+- git init : initialize -> (master)라는 곳에서 관리하고 있다고 확인 가능 -> 프로젝트 시작 디렉토리에서 시작.
 - git status : 상태 확인 가능 -> untracked files : 아직 버전이 없어서 git은 모름!
 - git add (경로) : staging area에 (무언가)를 추가해줘 -> git status 시 changes to be commited가 생긴다
 - git rm --cashed : 를 통해 언스테이징 가능
