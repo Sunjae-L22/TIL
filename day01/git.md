@@ -25,3 +25,4 @@
 - 커밋 : 버전을 남기는 것이기 때문에 무엇을 어떻게 수정했는지에 대한 설명을 한다. 
 - 커밋을 통해 버젼이 생긴 친구들은 git log를 통해 확인 가능(git init -> git add -> git commit -> git log 사이의 모든 단계에서 git status. 머리아플때 status. 피곤할때 status. 계속 찍어보기)
 - git log --oneline --graph : 관계파악 가능, 한줄로 간략하게 출력
+- git restore로 변화를 무시하면 그 전 버전으로 돌려준다.
