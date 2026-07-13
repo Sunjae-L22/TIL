@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>프로젝트 — 이선재</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>body{min-height:100vh;}</style>
+</head>
+<body data-page="projects" class="bg-slate-50 text-slate-900 antialiased">
+  <header class="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
+      <a href="index.html" class="font-semibold uppercase tracking-[0.24em] text-slate-900">SUNJAE LEE</a>
+      <nav class="hidden items-center gap-8 text-sm md:flex">
+        <a href="index.html" data-page="home" class="nav-link">홈</a>
+        <a href="projects.html" data-page="projects" class="nav-link">프로젝트</a>
+        <a href="about.html" data-page="about" class="nav-link">소개</a>
+      </nav>
+      <button id="nav-toggle" class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-200 text-slate-700 md:hidden">☰</button>
+    </div>
+    <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white/95 px-4 pb-4 md:hidden">
+      <a href="index.html" data-page="home" class="block rounded-lg px-3 py-3 text-sm text-slate-700 hover:bg-slate-100">홈</a>
+      <a href="projects.html" data-page="projects" class="mt-1 block rounded-lg px-3 py-3 text-sm text-slate-700 hover:bg-slate-100">프로젝트</a>
+      <a href="about.html" data-page="about" class="mt-1 block rounded-lg px-3 py-3 text-sm text-slate-700 hover:bg-slate-100">소개</a>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+    <section class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div>
+        <p class="mb-6 inline-flex items-center gap-3 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700">Project Showcase</p>
+        <h1 class="text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">현장 데이터와 AI를 연결하는 프로젝트.</h1>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">편향성 분석, 환경 패널 데이터, 딥페이크 검증까지. 프로젝트별 목적과 결과를 중심으로 기술 역량과 실무 감각을 보여줍니다.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="about.html" class="inline-flex items-center rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-900 shadow-sm transition hover:border-emerald-400 hover:text-emerald-700">소개로 이동</a>
+          <a href="index.html" class="inline-flex items-center rounded-md bg-emerald-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-700">홈으로 돌아가기</a>
+        </div>
+      </div>
+      <div class="rounded-3xl border border-slate-200 bg-slate-100 p-6 shadow-sm">
+        <div class="space-y-4 rounded-3xl bg-white p-6 shadow-sm">
+          <p class="text-sm uppercase tracking-[0.24em] text-slate-500">Project Summary</p>
+          <div class="grid gap-3 text-slate-600">
+            <p>Meta-Llama-3-8B 편향성 평가, 환경 데이터 통합 분석, 딥페이크 영상 탐지까지 다양한 문제를 데이터 중심으로 해결했습니다.</p>
+            <p>각 프로젝트는 재현 가능하고 설명 가능한 모델 설계, 통계적 검증, 시각화된 인사이트 제공을 목표로 삼았습니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-24">
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="text-sm uppercase tracking-[0.24em] text-emerald-700">Key Projects</p>
+          <h2 class="mt-3 text-3xl font-semibold text-slate-950">주요 프로젝트</h2>
+        </div>
+        <p class="text-sm text-slate-500">01 / 03</p>
+      </div>
+      <div class="mt-10 grid gap-6">
+        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="flex flex-wrap items-center gap-3 text-sm text-slate-500">
+            <span>2025 · 개인 프로젝트</span>
+            <span class="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-700">Bias Analysis</span>
+          </div>
+          <h3 class="mt-4 text-2xl font-semibold text-slate-950">Domain-wise Intrinsic Bias in Llama-3-8B</h3>
+          <p class="mt-4 text-slate-600">LLM 편향성 평가와 정렬 전후 성능 비교를 통해 도메인별 편향 재구성 및 통계적 검증을 수행했습니다.</p>
+          <ul class="mt-4 space-y-2 text-slate-600">
+            <li>Meta-Llama-3-8B Base와 Instruct 모델의 StereoSet 편향성 분석</li>
+            <li>Bootstrap 기반 95% 신뢰구간 도출로 편향 개선 수준을 정량화</li>
+            <li>Hugging Face Transformers 재현 가능한 파이프라인 구축</li>
+          </ul>
+        </article>
+        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="flex flex-wrap items-center gap-3 text-sm text-slate-500">
+            <span>2025 · 팀 프로젝트</span>
+            <span class="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-700">환경 데이터</span>
+          </div>
+          <h3 class="mt-4 text-2xl font-semibold text-slate-950">Biodiversity × Climate × Pollution Analysis</h3>
+          <p class="mt-4 text-slate-600">환경 패널 데이터를 구축하고 XGBoost와 SHAP를 통해 취약 지역을 탐지했습니다.</p>
+          <ul class="mt-4 space-y-2 text-slate-600">
+            <li>조류, 기후, 대기오염 데이터를 통합해 3,616건 패널 데이터 구축</li>
+            <li>XGBoost 기반 예측 모델과 SHAP 해석으로 주요 영향 변수를 도출</li>
+            <li>DTW 클러스터링과 베이지안 What-if 시나리오를 통한 취약 지역 분석</li>
+          </ul>
+        </article>
+        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="flex flex-wrap items-center gap-3 text-sm text-slate-500">
+            <span>2025 · 팀 프로젝트</span>
+            <span class="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-700">Vision / Temporal</span>
+          </div>
+          <h3 class="mt-4 text-2xl font-semibold text-slate-950">Deepfake Video Detection</h3>
+          <p class="mt-4 text-slate-600">Video Swin Transformer 기반 딥페이크 탐지 파이프라인으로 시공간 정보와 클래스 불균형 문제를 함께 다뤘습니다.</p>
+          <ul class="mt-4 space-y-2 text-slate-600">
+            <li>Video Swin Transformer와 Xception+LSTM 비교 분석</li>
+            <li>얼굴 크롭, 프레임 샘플링 전략을 통한 데이터 정규화</li>
+            <li>클래스 불균형 대응으로 모델 안정성 향상</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-8 sm:px-6 sm:flex-row sm:items-center sm:justify-between">
+      <span class="text-sm text-slate-500">© 2025 이선재 · Data Scientist</span>
+      <div class="flex flex-wrap gap-3 text-sm text-slate-600">
+        <a href="mailto:leeseonjae0111@gmail.com" class="hover:text-emerald-700">Email</a>
+        <a href="https://github.com/Vongole25" target="_blank" rel="noopener" class="hover:text-emerald-700">GitHub</a>
+        <a href="https://it-study-2002.tistory.com/" target="_blank" rel="noopener" class="hover:text-emerald-700">Blog</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const page = document.body.dataset.page;
+    const links = document.querySelectorAll('a[data-page]');
+    links.forEach(link => {
+      if (link.dataset.page === page) {
+        link.classList.add('text-emerald-600', 'font-semibold');
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.classList.add('text-slate-600', 'hover:text-slate-900');
+      }
+    });
+
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.getElementById('mobile-menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
