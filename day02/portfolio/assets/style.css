@@ -1,0 +1,32 @@
+/* shared custom styles — everything else is Tailwind utility classes */
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* timeline */
+.tl-dot{transition:background-color .3s ease,border-color .3s ease}
+.tl-dot.on{border-color:#0066cc;background:#0066cc}
+.dark .tl-dot.on{border-color:#2997ff;background:#2997ff}
+#tl-fill{transition:height .15s linear}
+
+/* scroll progress */
+#progress{transition:width .08s linear}
+
+/* easter-egg toast */
+.toast{
+  position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(8px);
+  background:rgba(29,29,31,.92);color:#f5f5f7;font-size:14px;letter-spacing:-.2px;
+  padding:12px 20px;border-radius:999px;z-index:100;opacity:0;
+  transition:opacity .3s ease,transform .3s ease;backdrop-filter:blur(8px);
+  max-width:88vw;text-align:center;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* modal */
+#modal{transition:opacity .25s ease,visibility .25s ease}
+#modal .panel{transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto!important}
+}

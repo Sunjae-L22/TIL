@@ -1,136 +1,186 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>소개 — 이선재</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>body{min-height:100vh;}</style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>소개 — 이선재</title>
+<meta name="description" content="이선재 — Data Scientist 포트폴리오. NLP·LLM, 데이터 분석/모델링." />
+<script>try{if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{ab:{DEFAULT:'#0066cc',focus:'#0071e3',dk:'#2997ff'},ink:'#1d1d1f',parch:'#f5f5f7',tile:'#272729',hair:'#e0e0e0',mut:'#6e6e73',mutd:'#86868b'},fontFamily:{sf:['SF Pro Display','SF Pro Text','-apple-system','BlinkMacSystemFont','Pretendard','system-ui','sans-serif']}}}}</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<link rel="stylesheet" href="assets/style.css" />
+<script src="common.js" defer></script>
 </head>
-<body data-page="about" class="bg-slate-50 text-slate-900 antialiased">
-  <header class="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
-    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-      <a href="index.html" class="font-semibold uppercase tracking-[0.24em] text-slate-900">SUNJAE LEE</a>
-      <nav class="hidden items-center gap-8 text-sm md:flex">
-        <a href="index.html" data-page="home" class="nav-link">홈</a>
-        <a href="projects.html" data-page="projects" class="nav-link">프로젝트</a>
-        <a href="about.html" data-page="about" class="nav-link">소개</a>
-      </nav>
-      <button id="nav-toggle" class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-200 text-slate-700 md:hidden">☰</button>
+<body data-page="about" class="bg-white font-sf text-ink antialiased transition-colors dark:bg-black dark:text-[#f5f5f7]">
+<div id="progress" class="fixed left-0 top-0 z-[80] h-[2px] w-0 bg-ab dark:bg-ab-dk"></div>
+<header class="sticky top-0 z-50 bg-black/90 backdrop-blur-md">
+  <nav class="mx-auto flex h-12 max-w-[1024px] items-center justify-between px-4" aria-label="주 메뉴">
+    <a href="index.html" id="brand" class="text-[13px] font-semibold tracking-[0.22em] text-white">SUNJAE LEE<span id="brand-star" class="ml-1.5 hidden text-ab-dk" aria-hidden="true">★</span></a>
+    <ul class="hidden items-center gap-9 md:flex">
+      <li><a href="index.html" data-page="home" data-i18n="nav.home" class="text-[13px] tracking-[-0.1px] transition"></a></li>
+      <li><a href="projects.html" data-page="projects" data-i18n="nav.projects" class="text-[13px] tracking-[-0.1px] transition"></a></li>
+      <li><a href="about.html" data-page="about" data-i18n="nav.about" class="text-[13px] tracking-[-0.1px] transition"></a></li>
+      <li><a href="playground.html" data-page="playground" data-i18n="nav.playground" class="text-[13px] tracking-[-0.1px] transition"></a></li>
+    </ul>
+    <div class="flex items-center gap-2">
+      <button id="lang-toggle" class="h-8 rounded-full bg-white/10 px-3 text-[12px] font-semibold text-white transition hover:bg-white/20 active:scale-95" aria-label="언어 전환">EN</button>
+      <button id="theme-toggle" class="h-8 w-8 rounded-full bg-white/10 text-[14px] text-white transition hover:bg-white/20 active:scale-95" aria-label="테마 전환">☾</button>
+      <button id="nav-toggle" class="h-8 w-8 rounded-full bg-white/10 text-[14px] text-white transition hover:bg-white/20 active:scale-95 md:hidden" aria-label="메뉴 열기" aria-expanded="false">☰</button>
     </div>
-    <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white/95 px-4 pb-4 md:hidden">
-      <a href="index.html" data-page="home" class="block rounded-lg px-3 py-3 text-sm text-slate-700 hover:bg-slate-100">홈</a>
-      <a href="projects.html" data-page="projects" class="mt-1 block rounded-lg px-3 py-3 text-sm text-slate-700 hover:bg-slate-100">프로젝트</a>
-      <a href="about.html" data-page="about" class="mt-1 block rounded-lg px-3 py-3 text-sm text-slate-700 hover:bg-slate-100">소개</a>
-    </div>
-  </header>
+  </nav>
+  <div id="mobile-menu" class="hidden border-t border-white/10 bg-black px-4 pb-3 md:hidden">
+    <a href="index.html" data-page="home" data-i18n="nav.home" class="block py-3 text-[15px]"></a>
+    <a href="projects.html" data-page="projects" data-i18n="nav.projects" class="block py-3 text-[15px]"></a>
+    <a href="about.html" data-page="about" data-i18n="nav.about" class="block py-3 text-[15px]"></a>
+    <a href="playground.html" data-page="playground" data-i18n="nav.playground" class="block py-3 text-[15px]"></a>
+  </div>
+</header>
+<main>
+  <!-- hero -->
+  <section class="px-4 pb-16 pt-16 text-center sm:pt-20">
+    <h1 data-i18n="ab.h1" class="reveal mx-auto max-w-[700px] text-[34px] font-semibold leading-[1.1] tracking-[-0.28px] sm:text-[48px]"></h1>
+    <p data-i18n="ab.lead" class="reveal mx-auto mt-4 max-w-[560px] text-[19px] font-light leading-[1.45] tracking-[0.1px] text-mut dark:text-mutd sm:text-[21px]"></p>
+  </section>
 
-  <main class="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
-    <section class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-      <div>
-        <p class="mb-6 inline-flex items-center gap-3 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700">About</p>
-        <h1 class="text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">데이터 기반 인사이트로 의미를 쌓습니다.</h1>
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">통계, 머신러닝, 자연어 처리까지 이어지는 학습과 연구를 통해 정보를 실행 가능한 인사이트로 바꿉니다. 지속적인 학습과 실전 프로젝트로 역량을 확장합니다.</p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="projects.html" class="inline-flex items-center rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-900 shadow-sm transition hover:border-emerald-400 hover:text-emerald-700">프로젝트로 이동</a>
-          <a href="index.html" class="inline-flex items-center rounded-md bg-emerald-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-700">홈으로 돌아가기</a>
-        </div>
-      </div>
-      <div class="rounded-3xl border border-slate-200 bg-slate-100 p-6 shadow-sm">
-        <div class="space-y-4 rounded-3xl bg-white p-6 shadow-sm">
-          <p class="text-sm uppercase tracking-[0.24em] text-slate-500">Personal Summary</p>
-          <div class="grid gap-3 text-slate-600">
-            <p>데이터 사이언스 전공과 교환학생 경험을 통해 글로벌 시각을 넓히고, 실무 중심의 분석과 모델링을 꾸준히 발전시켜 왔습니다.</p>
-            <p>기술적 통찰력과 커뮤니케이션을 결합해 AI 기반 문제 해결이 가능한 데이터 사이언티스트입니다.</p>
+  <!-- interactive timeline -->
+  <section class="bg-parch px-4 py-20 dark:bg-[#161617]">
+    <div class="mx-auto max-w-[760px]">
+      <p class="reveal text-[12px] font-semibold uppercase tracking-[0.18em] text-ab dark:text-ab-dk">Experience &amp; Education</p>
+      <h2 data-i18n="tl.title" class="reveal mt-2 text-[32px] font-semibold leading-[1.12] tracking-[-0.374px] sm:text-[40px]"></h2>
+      <div id="timeline" class="relative mt-12">
+        <div class="absolute bottom-1 left-[6px] top-1 w-px bg-hair dark:bg-white/15" aria-hidden="true"></div>
+        <div id="tl-fill" class="absolute left-[6px] top-1 w-px bg-ab dark:bg-ab-dk" style="height:0%" aria-hidden="true"></div>
+
+        <article class="reveal relative pb-12 pl-10">
+          <span class="tl-dot absolute left-0 top-1.5 h-[13px] w-[13px] rounded-full border-2 border-hair bg-parch dark:border-white/25 dark:bg-[#161617]" aria-hidden="true"></span>
+          <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+            <h3 data-i18n="tl1.h" class="text-[19px] font-semibold tracking-[-0.3px]"></h3>
+            <span class="text-[13px] text-mut dark:text-mutd">2023.10 — 2025.01</span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="mt-24">
-      <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p class="text-sm uppercase tracking-[0.24em] text-emerald-700">Experience & Education</p>
-          <h2 class="mt-3 text-3xl font-semibold text-slate-950">경력 · 학력</h2>
-        </div>
-        <p class="text-sm text-slate-500">01 / 02</p>
-      </div>
-      <div class="mt-10 space-y-6">
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h3 class="text-2xl font-semibold text-slate-950">학부 연구생 · Undergraduate Research Assistant</h3>
-          <p class="mt-2 text-sm text-slate-500">고려대학교 세종캠퍼스 국가통계연구실</p>
-          <ul class="mt-4 list-disc space-y-2 pl-5 text-slate-600">
-            <li>SARIMAX 모델로 코로나19 확진자 수와 인구 이동량 상관관계 분석</li>
+          <p data-i18n="tl1.org" class="mt-1 text-[15px] text-mut dark:text-mutd"></p>
+          <ul class="mt-3 space-y-2">
+            <li data-i18n="tl1.b1" class="relative pl-5 text-[15px] leading-[1.55] tracking-[-0.2px] text-ink/85 before:absolute before:left-0 before:font-semibold before:text-ab before:content-['\203A'] dark:text-white/85 dark:before:text-ab-dk"></li>
           </ul>
-          <p class="mt-4 text-sm text-slate-500">2023.10 — 2025.01</p>
         </article>
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h3 class="text-2xl font-semibold text-slate-950">고려대학교 세종캠퍼스</h3>
-          <p class="mt-2 text-sm text-slate-500">빅데이터 사이언스 학부</p>
-          <ul class="mt-4 list-disc space-y-2 pl-5 text-slate-600">
-            <li><span class="font-semibold text-slate-900">전공 4.41 / 4.5</span> · 전체 평점 4.32 / 4.5</li>
-            <li>주요 과목: 기계학습, 다변량분석, 시계열분석, 딥러닝, 강화학습</li>
+
+        <article class="reveal relative pb-12 pl-10">
+          <span class="tl-dot absolute left-0 top-1.5 h-[13px] w-[13px] rounded-full border-2 border-hair bg-parch dark:border-white/25 dark:bg-[#161617]" aria-hidden="true"></span>
+          <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+            <h3 data-i18n="tl2.h" class="text-[19px] font-semibold tracking-[-0.3px]"></h3>
+            <span data-i18n="tl2.date" class="text-[13px] text-mut dark:text-mutd"></span>
+          </div>
+          <p data-i18n="tl2.org" class="mt-1 text-[15px] text-mut dark:text-mutd"></p>
+          <ul class="mt-3 space-y-2">
+            <li data-i18n="tl2.b1" class="relative pl-5 text-[15px] leading-[1.55] tracking-[-0.2px] text-ink/85 before:absolute before:left-0 before:font-semibold before:text-ab before:content-['\203A'] dark:text-white/85 dark:before:text-ab-dk"></li>
+            <li data-i18n="tl2.b2" class="relative pl-5 text-[15px] leading-[1.55] tracking-[-0.2px] text-ink/85 before:absolute before:left-0 before:font-semibold before:text-ab before:content-['\203A'] dark:text-white/85 dark:before:text-ab-dk"></li>
           </ul>
-          <p class="mt-4 text-sm text-slate-500">2020.03 — 2026.06 (졸업 예정)</p>
         </article>
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h3 class="text-2xl font-semibold text-slate-950">Florida Atlantic University</h3>
-          <p class="mt-2 text-sm text-slate-500">College of Engineering & Computer Science</p>
-          <p class="mt-4 text-slate-600">2025년 가을 학기에 교환학생으로 글로벌 AI·데이터 학습 환경을 경험했습니다.</p>
-          <p class="mt-4 text-sm text-slate-500">2025.08 — 2025.12</p>
-        </article>
-      </div>
-    </section>
 
-    <section class="mt-24">
-      <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p class="text-sm uppercase tracking-[0.24em] text-emerald-700">Continuous Learning</p>
-          <h2 class="mt-3 text-3xl font-semibold text-slate-950">지속적인 학습</h2>
-        </div>
-        <p class="text-sm text-slate-500">02 / 02</p>
-      </div>
-      <div class="mt-10 grid gap-6 lg:grid-cols-2">
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h3 class="text-xl font-semibold text-slate-950">Technical Blog · 60+ POSTS</h3>
-          <p class="mt-4 text-slate-600">NLP, 언어 모델, 프롬프트 엔지니어링 관련 스터디 노트를 꾸준히 기록하며 지식을 정리하고 공유합니다.</p>
+        <article class="reveal relative pb-12 pl-10">
+          <span class="tl-dot absolute left-0 top-1.5 h-[13px] w-[13px] rounded-full border-2 border-hair bg-parch dark:border-white/25 dark:bg-[#161617]" aria-hidden="true"></span>
+          <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+            <h3 data-i18n="tl3.h" class="text-[19px] font-semibold tracking-[-0.3px]"></h3>
+            <span class="text-[13px] text-mut dark:text-mutd">2025.08 — 2025.12</span>
+          </div>
+          <p data-i18n="tl3.org" class="mt-1 text-[15px] text-mut dark:text-mutd"></p>
         </article>
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h3 class="text-xl font-semibold text-slate-950">Self-Directed Study</h3>
-          <p class="mt-4 text-slate-600">Stanford CS224N, Effective Python 등 고급 자료를 학습하며 NLP와 파이썬 실력을 강화하고 있습니다.</p>
-        </article>
-      </div>
-    </section>
-  </main>
 
-  <footer class="border-t border-slate-200 bg-white">
-    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-8 sm:px-6 sm:flex-row sm:items-center sm:justify-between">
-      <span class="text-sm text-slate-500">© 2025 이선재 · Data Scientist</span>
-      <div class="flex flex-wrap gap-3 text-sm text-slate-600">
-        <a href="mailto:leeseonjae0111@gmail.com" class="hover:text-emerald-700">Email</a>
-        <a href="https://github.com/Vongole25" target="_blank" rel="noopener" class="hover:text-emerald-700">GitHub</a>
-        <a href="https://it-study-2002.tistory.com/" target="_blank" rel="noopener" class="hover:text-emerald-700">Blog</a>
+        <article class="reveal relative pl-10">
+          <span class="tl-dot absolute left-0 top-1.5 h-[13px] w-[13px] rounded-full border-2 border-hair bg-parch dark:border-white/25 dark:bg-[#161617]" aria-hidden="true"></span>
+          <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+            <h3 data-i18n="tl4.h" class="text-[19px] font-semibold tracking-[-0.3px]"></h3>
+            <span class="text-[13px] text-mut dark:text-mutd">2026.07 —</span>
+          </div>
+          <p data-i18n="tl4.org" class="mt-1 text-[15px] text-mut dark:text-mutd"></p>
+          <ul class="mt-3 space-y-2">
+            <li data-i18n="tl4.b1" class="relative pl-5 text-[15px] leading-[1.55] tracking-[-0.2px] text-ink/85 before:absolute before:left-0 before:font-semibold before:text-ab before:content-['\203A'] dark:text-white/85 dark:before:text-ab-dk"></li>
+          </ul>
+        </article>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    const page = document.body.dataset.page;
-    const links = document.querySelectorAll('a[data-page]');
-    links.forEach(link => {
-      if (link.dataset.page === page) {
-        link.classList.add('text-emerald-600', 'font-semibold');
-        link.setAttribute('aria-current', 'page');
-      } else {
-        link.classList.add('text-slate-600', 'hover:text-slate-900');
-      }
-    });
+  <!-- continuous learning -->
+  <section class="px-4 py-20">
+    <div class="mx-auto max-w-[1024px]">
+      <p class="reveal text-[12px] font-semibold uppercase tracking-[0.18em] text-ab dark:text-ab-dk">Continuous Learning</p>
+      <div class="reveal mt-2 flex flex-wrap items-baseline justify-between gap-3">
+        <h2 data-i18n="learn.title" class="text-[32px] font-semibold leading-[1.12] tracking-[-0.374px] sm:text-[40px]"></h2>
+        <a href="https://it-study-2002.tistory.com/" target="_blank" rel="noopener" class="text-[15px] text-ab hover:underline dark:text-ab-dk"><span data-i18n="learn.blog"></span> &nearr;</a>
+      </div>
+      <div class="mt-10 grid gap-5 md:grid-cols-2">
+        <article class="reveal rounded-[18px] border border-hair bg-white p-6 dark:border-white/10 dark:bg-[#1d1d1f]">
+          <h3 data-i18n="learn1.h" class="text-[19px] font-semibold tracking-[-0.3px]"></h3>
+          <p data-i18n="learn1.p" class="mt-3 text-[15px] leading-[1.55] tracking-[-0.2px] text-mut dark:text-mutd"></p>
+        </article>
+        <article class="reveal rounded-[18px] border border-hair bg-white p-6 dark:border-white/10 dark:bg-[#1d1d1f]">
+          <h3 data-i18n="learn2.h" class="text-[19px] font-semibold tracking-[-0.3px]"></h3>
+          <p data-i18n="learn2.p" class="mt-3 text-[15px] leading-[1.55] tracking-[-0.2px] text-mut dark:text-mutd"></p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-    const toggle = document.getElementById('nav-toggle');
-    const menu = document.getElementById('mobile-menu');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-  </script>
+  <!-- travel log : 다크 타일 -->
+  <section class="bg-tile px-4 py-20 text-white">
+    <div class="mx-auto max-w-[1024px]">
+      <p class="reveal text-[12px] font-semibold uppercase tracking-[0.18em] text-ab-dk">Travel Log</p>
+      <h2 data-i18n="travel.sub" class="reveal mt-2 text-[32px] font-semibold leading-[1.12] tracking-[-0.374px] sm:text-[40px]"></h2>
+      <p data-i18n="travel.lead" class="reveal mt-4 max-w-[560px] text-[19px] font-light leading-[1.45] text-white/60"></p>
+      <img src="assets/travel_miami.jpg" alt="미국 플로리다 인터마이애미 홈경기장 관중석의 핑크 물결" class="reveal mt-10 w-full rounded-lg" />
+      <div class="mt-8 grid gap-5 md:grid-cols-3">
+        <article class="reveal rounded-[18px] border border-white/10 bg-white/5 p-5">
+          <span class="rounded-full bg-ab-dk/15 px-3 py-1 text-[11px] font-semibold tracking-[0.08em] text-ab-dk">2025 FALL</span>
+          <h3 class="mt-4 text-[19px] font-semibold tracking-[-0.3px]">Boca Raton, Florida</h3>
+          <p data-i18n="tv1.p" class="mt-2 text-[14px] leading-[1.5] text-white/60"></p>
+          <a href="https://blog.naver.com/lsj020111" target="_blank" rel="noopener" class="mt-4 inline-block text-[14px] text-ab-dk hover:underline"><span data-i18n="travel.read"></span> &rsaquo;</a>
+        </article>
+        <article class="reveal rounded-[18px] border border-white/10 bg-white/5 p-5">
+          <span class="rounded-full bg-ab-dk/15 px-3 py-1 text-[11px] font-semibold tracking-[0.08em] text-ab-dk">NOW</span>
+          <h3 class="mt-4 text-[19px] font-semibold tracking-[-0.3px]">Daejeon, Korea</h3>
+          <p data-i18n="tv2.p" class="mt-2 text-[14px] leading-[1.5] text-white/60"></p>
+          <a href="https://blog.naver.com/lsj020111" target="_blank" rel="noopener" class="mt-4 inline-block text-[14px] text-ab-dk hover:underline"><span data-i18n="travel.read"></span> &rsaquo;</a>
+        </article>
+        <article class="reveal flex flex-col items-center justify-center gap-2 rounded-[18px] border border-dashed border-white/20 p-5 text-center">
+          <span class="text-[26px] text-white/30" aria-hidden="true">&#9992;</span>
+          <p data-i18n="tv3.p" class="text-[14px] text-white/50"></p>
+          <span class="rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold tracking-[0.08em] text-white/50">SOON</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- sound : 블랙 타일 -->
+  <section class="bg-black px-4 py-20 text-white">
+    <div class="mx-auto max-w-[760px]">
+      <p class="reveal text-[12px] font-semibold uppercase tracking-[0.18em] text-ab-dk">Sound</p>
+      <h2 data-i18n="music.sub" class="reveal mt-2 text-[32px] font-semibold leading-[1.12] tracking-[-0.374px] sm:text-[40px]"></h2>
+      <p data-i18n="music.desc" class="reveal mt-4 max-w-[540px] text-[16px] leading-[1.47] text-white/60"></p>
+      <div class="reveal mt-8 rounded-[18px] border border-white/10 bg-white/5 p-5">
+        <div class="flex flex-col items-stretch gap-5 sm:flex-row sm:items-center">
+          <button id="music-btn" class="inline-flex shrink-0 items-center justify-center gap-2.5 rounded-full bg-ab px-6 py-3 text-[16px] text-white transition hover:bg-ab-focus active:scale-95">
+            <span id="music-icon" aria-hidden="true">&#9654;</span><span id="music-label"></span>
+          </button>
+          <canvas id="music-viz" width="520" height="56" class="h-14 w-full min-w-0"></canvas>
+        </div>
+        <p class="mt-4 font-mono text-[12px] tracking-[0.02em] text-white/40">F&#9651;7 &middot; Em7 &middot; Dm7 &middot; C&#9651;7 &mdash; 72 BPM &middot; generated live by Web Audio API</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="border-t border-hair bg-parch dark:border-white/10 dark:bg-[#161617]">
+  <div class="mx-auto max-w-[1024px] px-4 py-12">
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <span data-i18n="ft.rights" class="text-[12px] tracking-[-0.12px] text-mut dark:text-mutd"></span>
+      <div class="flex gap-5 text-[12px]">
+        <a href="mailto:leeseonjae0111@gmail.com" class="text-mut transition hover:text-ab dark:text-mutd dark:hover:text-ab-dk">Email</a>
+        <a href="https://github.com/Vongole25" target="_blank" rel="noopener" class="text-mut transition hover:text-ab dark:text-mutd dark:hover:text-ab-dk">GitHub</a>
+        <a href="https://it-study-2002.tistory.com/" target="_blank" rel="noopener" class="text-mut transition hover:text-ab dark:text-mutd dark:hover:text-ab-dk">Blog</a>
+      </div>
+    </div>
+    <p data-i18n="ft.built" class="mt-2 text-[12px] tracking-[-0.12px] text-mut/70 dark:text-mutd/70"></p>
+  </div>
+</footer>
 </body>
 </html>

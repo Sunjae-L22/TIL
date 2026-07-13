@@ -1,132 +1,142 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>프로젝트 — 이선재</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>body{min-height:100vh;}</style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>프로젝트 — 이선재</title>
+<meta name="description" content="이선재 — Data Scientist 포트폴리오. NLP·LLM, 데이터 분석/모델링." />
+<script>try{if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{ab:{DEFAULT:'#0066cc',focus:'#0071e3',dk:'#2997ff'},ink:'#1d1d1f',parch:'#f5f5f7',tile:'#272729',hair:'#e0e0e0',mut:'#6e6e73',mutd:'#86868b'},fontFamily:{sf:['SF Pro Display','SF Pro Text','-apple-system','BlinkMacSystemFont','Pretendard','system-ui','sans-serif']}}}}</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<link rel="stylesheet" href="assets/style.css" />
+<script src="common.js" defer></script>
 </head>
-<body data-page="projects" class="bg-slate-50 text-slate-900 antialiased">
-  <header class="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
-    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-      <a href="index.html" class="font-semibold uppercase tracking-[0.24em] text-slate-900">SUNJAE LEE</a>
-      <nav class="hidden items-center gap-8 text-sm md:flex">
-        <a href="index.html" data-page="home" class="nav-link">홈</a>
-        <a href="projects.html" data-page="projects" class="nav-link">프로젝트</a>
-        <a href="about.html" data-page="about" class="nav-link">소개</a>
-      </nav>
-      <button id="nav-toggle" class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-200 text-slate-700 md:hidden">☰</button>
+<body data-page="projects" class="bg-white font-sf text-ink antialiased transition-colors dark:bg-black dark:text-[#f5f5f7]">
+<div id="progress" class="fixed left-0 top-0 z-[80] h-[2px] w-0 bg-ab dark:bg-ab-dk"></div>
+<header class="sticky top-0 z-50 bg-black/90 backdrop-blur-md">
+  <nav class="mx-auto flex h-12 max-w-[1024px] items-center justify-between px-4" aria-label="주 메뉴">
+    <a href="index.html" id="brand" class="text-[13px] font-semibold tracking-[0.22em] text-white">SUNJAE LEE<span id="brand-star" class="ml-1.5 hidden text-ab-dk" aria-hidden="true">★</span></a>
+    <ul class="hidden items-center gap-9 md:flex">
+      <li><a href="index.html" data-page="home" data-i18n="nav.home" class="text-[13px] tracking-[-0.1px] transition"></a></li>
+      <li><a href="projects.html" data-page="projects" data-i18n="nav.projects" class="text-[13px] tracking-[-0.1px] transition"></a></li>
+      <li><a href="about.html" data-page="about" data-i18n="nav.about" class="text-[13px] tracking-[-0.1px] transition"></a></li>
+      <li><a href="playground.html" data-page="playground" data-i18n="nav.playground" class="text-[13px] tracking-[-0.1px] transition"></a></li>
+    </ul>
+    <div class="flex items-center gap-2">
+      <button id="lang-toggle" class="h-8 rounded-full bg-white/10 px-3 text-[12px] font-semibold text-white transition hover:bg-white/20 active:scale-95" aria-label="언어 전환">EN</button>
+      <button id="theme-toggle" class="h-8 w-8 rounded-full bg-white/10 text-[14px] text-white transition hover:bg-white/20 active:scale-95" aria-label="테마 전환">☾</button>
+      <button id="nav-toggle" class="h-8 w-8 rounded-full bg-white/10 text-[14px] text-white transition hover:bg-white/20 active:scale-95 md:hidden" aria-label="메뉴 열기" aria-expanded="false">☰</button>
     </div>
-    <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white/95 px-4 pb-4 md:hidden">
-      <a href="index.html" data-page="home" class="block rounded-lg px-3 py-3 text-sm text-slate-700 hover:bg-slate-100">홈</a>
-      <a href="projects.html" data-page="projects" class="mt-1 block rounded-lg px-3 py-3 text-sm text-slate-700 hover:bg-slate-100">프로젝트</a>
-      <a href="about.html" data-page="about" class="mt-1 block rounded-lg px-3 py-3 text-sm text-slate-700 hover:bg-slate-100">소개</a>
+  </nav>
+  <div id="mobile-menu" class="hidden border-t border-white/10 bg-black px-4 pb-3 md:hidden">
+    <a href="index.html" data-page="home" data-i18n="nav.home" class="block py-3 text-[15px]"></a>
+    <a href="projects.html" data-page="projects" data-i18n="nav.projects" class="block py-3 text-[15px]"></a>
+    <a href="about.html" data-page="about" data-i18n="nav.about" class="block py-3 text-[15px]"></a>
+    <a href="playground.html" data-page="playground" data-i18n="nav.playground" class="block py-3 text-[15px]"></a>
+  </div>
+</header>
+<main>
+  <section class="bg-parch px-4 pb-14 pt-16 text-center dark:bg-[#161617] sm:pt-20">
+    <h1 data-i18n="prj.title" class="reveal text-[34px] font-semibold leading-[1.07] tracking-[-0.28px] sm:text-[48px]"></h1>
+    <p data-i18n="prj.lead" class="reveal mx-auto mt-4 max-w-[620px] text-[19px] font-light leading-[1.45] tracking-[0.1px] text-mut dark:text-mutd sm:text-[21px]"></p>
+  </section>
+
+  <section class="px-4 py-16">
+    <div class="mx-auto max-w-[1024px] space-y-6">
+      <article class="project reveal cursor-pointer rounded-[18px] border border-hair bg-white p-6 dark:border-white/10 dark:bg-[#1d1d1f] transition hover:border-[#c7c7cc] dark:hover:border-white/25 md:p-8" role="button" tabindex="0" data-thumb="assets/proj_bias.png" aria-label="Domain-wise Intrinsic Bias in Llama-3-8B 상세 보기">
+        <div class="grid gap-7 md:grid-cols-[300px,1fr] md:items-start">
+          <div>
+            <div class="p-thumb overflow-hidden rounded-lg"><img src="assets/proj_bias.png" alt="base 모델과 instruct 모델의 편향 분포 차이를 나타낸 그래프" class="w-full transition duration-500 hover:scale-[1.03]" /></div>
+            <div class="mt-4 flex flex-wrap items-center gap-3">
+              <span class="p-meta-item text-[13px] text-mut dark:text-mutd">2025</span>
+              <span data-i18n="p.type.personal" class="p-meta-item text-[13px] text-mut dark:text-mutd"></span>
+            </div>
+            <p class="mt-3 text-[14px] font-normal text-ab dark:text-ab-dk"><span data-i18n="prj.view"></span> &nearr;</p>
+          </div>
+          <div>
+            <h3 class="text-[24px] font-semibold leading-[1.19] tracking-[-0.374px]">Domain-wise Intrinsic Bias in Llama-3-8B</h3>
+            <p data-i18n="p1.sum" class="p-sum mt-2 text-[16px] leading-[1.47] tracking-[-0.3px] text-mut dark:text-mutd"></p>
+            <ul class="p-bullets mt-5 space-y-2.5">
+            <li data-i18n="p1.b1" class="relative pl-5 text-[15px] leading-[1.55] tracking-[-0.2px] text-ink/85 before:absolute before:left-0 before:font-semibold before:text-ab before:content-['\203A'] dark:text-white/85 dark:before:text-ab-dk"></li>
+            <li data-i18n="p1.b2" class="relative pl-5 text-[15px] leading-[1.55] tracking-[-0.2px] text-ink/85 before:absolute before:left-0 before:font-semibold before:text-ab before:content-['\203A'] dark:text-white/85 dark:before:text-ab-dk"></li>
+            <li data-i18n="p1.b3" class="relative pl-5 text-[15px] leading-[1.55] tracking-[-0.2px] text-ink/85 before:absolute before:left-0 before:font-semibold before:text-ab before:content-['\203A'] dark:text-white/85 dark:before:text-ab-dk"></li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <article class="project reveal cursor-pointer rounded-[18px] border border-hair bg-white p-6 dark:border-white/10 dark:bg-[#1d1d1f] transition hover:border-[#c7c7cc] dark:hover:border-white/25 md:p-8" role="button" tabindex="0" data-thumb="assets/proj_env.png" aria-label="Biodiversity &times; Climate &times; Pollution 상세 보기">
+        <div class="grid gap-7 md:grid-cols-[300px,1fr] md:items-start">
+          <div>
+            <div class="p-thumb overflow-hidden rounded-lg"><img src="assets/proj_env.png" alt="조류·기후·대기오염 시계열과 이상치 탐지를 표현한 그래프" class="w-full transition duration-500 hover:scale-[1.03]" /></div>
+            <div class="mt-4 flex flex-wrap items-center gap-3">
+              <span class="p-meta-item text-[13px] text-mut dark:text-mutd">2025</span>
+              <span data-i18n="p.type.team" class="p-meta-item text-[13px] text-mut dark:text-mutd"></span>
+              <span data-i18n="p2.badge" class="p-meta-item rounded-full bg-ab/10 px-3 py-1 text-[12px] font-semibold tracking-[-0.1px] text-ab dark:bg-ab-dk/15 dark:text-ab-dk"></span>
+            </div>
+            <p class="mt-3 text-[14px] font-normal text-ab dark:text-ab-dk"><span data-i18n="prj.view"></span> &nearr;</p>
+          </div>
+          <div>
+            <h3 class="text-[24px] font-semibold leading-[1.19] tracking-[-0.374px]">Biodiversity &times; Climate &times; Pollution</h3>
+            <p data-i18n="p2.sum" class="p-sum mt-2 text-[16px] leading-[1.47] tracking-[-0.3px] text-mut dark:text-mutd"></p>
+            <ul class="p-bullets mt-5 space-y-2.5">
+            <li data-i18n="p2.b1" class="relative pl-5 text-[15px] leading-[1.55] tracking-[-0.2px] text-ink/85 before:absolute before:left-0 before:font-semibold before:text-ab before:content-['\203A'] dark:text-white/85 dark:before:text-ab-dk"></li>
+            <li data-i18n="p2.b2" class="relative pl-5 text-[15px] leading-[1.55] tracking-[-0.2px] text-ink/85 before:absolute before:left-0 before:font-semibold before:text-ab before:content-['\203A'] dark:text-white/85 dark:before:text-ab-dk"></li>
+            <li data-i18n="p2.b3" class="relative pl-5 text-[15px] leading-[1.55] tracking-[-0.2px] text-ink/85 before:absolute before:left-0 before:font-semibold before:text-ab before:content-['\203A'] dark:text-white/85 dark:before:text-ab-dk"></li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <article class="project reveal cursor-pointer rounded-[18px] border border-hair bg-white p-6 dark:border-white/10 dark:bg-[#1d1d1f] transition hover:border-[#c7c7cc] dark:hover:border-white/25 md:p-8" role="button" tabindex="0" data-thumb="assets/proj_deepfake.png" aria-label="Deepfake Video Detection 상세 보기">
+        <div class="grid gap-7 md:grid-cols-[300px,1fr] md:items-start">
+          <div>
+            <div class="p-thumb overflow-hidden rounded-lg"><img src="assets/proj_deepfake.png" alt="영상 프레임 그리드에서 탐지된 딥페이크 프레임을 강조한 이미지" class="w-full transition duration-500 hover:scale-[1.03]" /></div>
+            <div class="mt-4 flex flex-wrap items-center gap-3">
+              <span class="p-meta-item text-[13px] text-mut dark:text-mutd">2025</span>
+              <span data-i18n="p.type.team" class="p-meta-item text-[13px] text-mut dark:text-mutd"></span>
+              <span data-i18n="p3.badge" class="p-meta-item rounded-full bg-ab/10 px-3 py-1 text-[12px] font-semibold tracking-[-0.1px] text-ab dark:bg-ab-dk/15 dark:text-ab-dk"></span>
+            </div>
+            <p class="mt-3 text-[14px] font-normal text-ab dark:text-ab-dk"><span data-i18n="prj.view"></span> &nearr;</p>
+          </div>
+          <div>
+            <h3 class="text-[24px] font-semibold leading-[1.19] tracking-[-0.374px]">Deepfake Video Detection</h3>
+            <p data-i18n="p3.sum" class="p-sum mt-2 text-[16px] leading-[1.47] tracking-[-0.3px] text-mut dark:text-mutd"></p>
+            <ul class="p-bullets mt-5 space-y-2.5">
+            <li data-i18n="p3.b1" class="relative pl-5 text-[15px] leading-[1.55] tracking-[-0.2px] text-ink/85 before:absolute before:left-0 before:font-semibold before:text-ab before:content-['\203A'] dark:text-white/85 dark:before:text-ab-dk"></li>
+            <li data-i18n="p3.b2" class="relative pl-5 text-[15px] leading-[1.55] tracking-[-0.2px] text-ink/85 before:absolute before:left-0 before:font-semibold before:text-ab before:content-['\203A'] dark:text-white/85 dark:before:text-ab-dk"></li>
+            </ul>
+          </div>
+        </div>
+      </article>
     </div>
-  </header>
+  </section>
+</main>
 
-  <main class="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
-    <section class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-      <div>
-        <p class="mb-6 inline-flex items-center gap-3 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700">Project Showcase</p>
-        <h1 class="text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">현장 데이터와 AI를 연결하는 프로젝트.</h1>
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">편향성 분석, 환경 패널 데이터, 딥페이크 검증까지. 프로젝트별 목적과 결과를 중심으로 기술 역량과 실무 감각을 보여줍니다.</p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="about.html" class="inline-flex items-center rounded-md border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-900 shadow-sm transition hover:border-emerald-400 hover:text-emerald-700">소개로 이동</a>
-          <a href="index.html" class="inline-flex items-center rounded-md bg-emerald-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-emerald-700">홈으로 돌아가기</a>
-        </div>
-      </div>
-      <div class="rounded-3xl border border-slate-200 bg-slate-100 p-6 shadow-sm">
-        <div class="space-y-4 rounded-3xl bg-white p-6 shadow-sm">
-          <p class="text-sm uppercase tracking-[0.24em] text-slate-500">Project Summary</p>
-          <div class="grid gap-3 text-slate-600">
-            <p>Meta-Llama-3-8B 편향성 평가, 환경 데이터 통합 분석, 딥페이크 영상 탐지까지 다양한 문제를 데이터 중심으로 해결했습니다.</p>
-            <p>각 프로젝트는 재현 가능하고 설명 가능한 모델 설계, 통계적 검증, 시각화된 인사이트 제공을 목표로 삼았습니다.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="mt-24">
-      <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p class="text-sm uppercase tracking-[0.24em] text-emerald-700">Key Projects</p>
-          <h2 class="mt-3 text-3xl font-semibold text-slate-950">주요 프로젝트</h2>
-        </div>
-        <p class="text-sm text-slate-500">01 / 03</p>
-      </div>
-      <div class="mt-10 grid gap-6">
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div class="flex flex-wrap items-center gap-3 text-sm text-slate-500">
-            <span>2025 · 개인 프로젝트</span>
-            <span class="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-700">Bias Analysis</span>
-          </div>
-          <h3 class="mt-4 text-2xl font-semibold text-slate-950">Domain-wise Intrinsic Bias in Llama-3-8B</h3>
-          <p class="mt-4 text-slate-600">LLM 편향성 평가와 정렬 전후 성능 비교를 통해 도메인별 편향 재구성 및 통계적 검증을 수행했습니다.</p>
-          <ul class="mt-4 space-y-2 text-slate-600">
-            <li>Meta-Llama-3-8B Base와 Instruct 모델의 StereoSet 편향성 분석</li>
-            <li>Bootstrap 기반 95% 신뢰구간 도출로 편향 개선 수준을 정량화</li>
-            <li>Hugging Face Transformers 재현 가능한 파이프라인 구축</li>
-          </ul>
-        </article>
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div class="flex flex-wrap items-center gap-3 text-sm text-slate-500">
-            <span>2025 · 팀 프로젝트</span>
-            <span class="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-700">환경 데이터</span>
-          </div>
-          <h3 class="mt-4 text-2xl font-semibold text-slate-950">Biodiversity × Climate × Pollution Analysis</h3>
-          <p class="mt-4 text-slate-600">환경 패널 데이터를 구축하고 XGBoost와 SHAP를 통해 취약 지역을 탐지했습니다.</p>
-          <ul class="mt-4 space-y-2 text-slate-600">
-            <li>조류, 기후, 대기오염 데이터를 통합해 3,616건 패널 데이터 구축</li>
-            <li>XGBoost 기반 예측 모델과 SHAP 해석으로 주요 영향 변수를 도출</li>
-            <li>DTW 클러스터링과 베이지안 What-if 시나리오를 통한 취약 지역 분석</li>
-          </ul>
-        </article>
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div class="flex flex-wrap items-center gap-3 text-sm text-slate-500">
-            <span>2025 · 팀 프로젝트</span>
-            <span class="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-700">Vision / Temporal</span>
-          </div>
-          <h3 class="mt-4 text-2xl font-semibold text-slate-950">Deepfake Video Detection</h3>
-          <p class="mt-4 text-slate-600">Video Swin Transformer 기반 딥페이크 탐지 파이프라인으로 시공간 정보와 클래스 불균형 문제를 함께 다뤘습니다.</p>
-          <ul class="mt-4 space-y-2 text-slate-600">
-            <li>Video Swin Transformer와 Xception+LSTM 비교 분석</li>
-            <li>얼굴 크롭, 프레임 샘플링 전략을 통한 데이터 정규화</li>
-            <li>클래스 불균형 대응으로 모델 안정성 향상</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="border-t border-slate-200 bg-white">
-    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-8 sm:px-6 sm:flex-row sm:items-center sm:justify-between">
-      <span class="text-sm text-slate-500">© 2025 이선재 · Data Scientist</span>
-      <div class="flex flex-wrap gap-3 text-sm text-slate-600">
-        <a href="mailto:leeseonjae0111@gmail.com" class="hover:text-emerald-700">Email</a>
-        <a href="https://github.com/Vongole25" target="_blank" rel="noopener" class="hover:text-emerald-700">GitHub</a>
-        <a href="https://it-study-2002.tistory.com/" target="_blank" rel="noopener" class="hover:text-emerald-700">Blog</a>
+<!-- project detail modal -->
+<div id="modal" class="invisible fixed inset-0 z-[70] flex items-center justify-center bg-black/50 p-4 opacity-0 backdrop-blur-sm" aria-hidden="true">
+  <div class="panel relative max-h-[88vh] w-full max-w-[640px] translate-y-4 scale-95 overflow-y-auto rounded-[18px] bg-white dark:bg-[#1d1d1f]" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button id="modal-close" class="absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-[#d2d2d7]/70 text-[15px] text-ink backdrop-blur transition active:scale-95" aria-label="닫기">&#10005;</button>
+    <img id="modal-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" class="w-full" />
+    <div class="p-7">
+      <div id="modal-meta" class="mb-3 flex flex-wrap items-center gap-3"></div>
+      <h3 id="modal-title" class="text-[24px] font-semibold leading-[1.19] tracking-[-0.374px]"></h3>
+      <p id="modal-summary" class="mt-2 text-[16px] leading-[1.47] text-mut dark:text-mutd"></p>
+      <ul id="modal-list" class="mt-5 space-y-2.5"></ul>
+    </div>
+  </div>
+</div>
+<footer class="border-t border-hair bg-parch dark:border-white/10 dark:bg-[#161617]">
+  <div class="mx-auto max-w-[1024px] px-4 py-12">
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <span data-i18n="ft.rights" class="text-[12px] tracking-[-0.12px] text-mut dark:text-mutd"></span>
+      <div class="flex gap-5 text-[12px]">
+        <a href="mailto:leeseonjae0111@gmail.com" class="text-mut transition hover:text-ab dark:text-mutd dark:hover:text-ab-dk">Email</a>
+        <a href="https://github.com/Vongole25" target="_blank" rel="noopener" class="text-mut transition hover:text-ab dark:text-mutd dark:hover:text-ab-dk">GitHub</a>
+        <a href="https://it-study-2002.tistory.com/" target="_blank" rel="noopener" class="text-mut transition hover:text-ab dark:text-mutd dark:hover:text-ab-dk">Blog</a>
       </div>
     </div>
-  </footer>
-
-  <script>
-    const page = document.body.dataset.page;
-    const links = document.querySelectorAll('a[data-page]');
-    links.forEach(link => {
-      if (link.dataset.page === page) {
-        link.classList.add('text-emerald-600', 'font-semibold');
-        link.setAttribute('aria-current', 'page');
-      } else {
-        link.classList.add('text-slate-600', 'hover:text-slate-900');
-      }
-    });
-
-    const toggle = document.getElementById('nav-toggle');
-    const menu = document.getElementById('mobile-menu');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-  </script>
+    <p data-i18n="ft.built" class="mt-2 text-[12px] tracking-[-0.12px] text-mut/70 dark:text-mutd/70"></p>
+  </div>
+</footer>
 </body>
 </html>

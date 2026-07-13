@@ -10,7 +10,7 @@
   /* ---------------- i18n dictionary ---------------- */
   var I18N = {
     ko: {
-      "nav.home": "홈", "nav.projects": "프로젝트", "nav.about": "소개",
+      "nav.home": "홈", "nav.projects": "프로젝트", "nav.about": "소개", "nav.playground": "Playground",
       /* index */
       "idx.h1": "데이터의 맥락을 이해하고,<br>최적의 모델을 구현합니다",
       "idx.lead": "고려대학교 빅데이터 사이언스 전공. 데이터 분석과 모델링, 자연어 처리까지 이어지는 실전형 역량으로 의미 있는 결과를 만듭니다.",
@@ -54,7 +54,10 @@
       "tl2.b2": "기계학습, 다변량분석, 시계열분석, 딥러닝, 강화학습 등 이수",
       "tl2.date": "2020.03 — 2026.06 (졸업 예정)",
       "tl3.h": "Florida Atlantic University", "tl3.org": "교환학생 · College of Engineering & CS",
+      "tl4.h": "SSAFY (삼성 청년 SW·AI 아카데미)", "tl4.org": "16기 데이터 트랙 · 대전 캠퍼스",
+      "tl4.b1": "데이터 분석·AI 실전 프로젝트 중심의 몰입형 교육 과정 이수 중",
       "learn.title": "지속적인 학습",
+      "learn.blog": "블로그 방문하기",
       "learn1.h": "Technical Blog · 60+ posts",
       "learn1.p": "NLP·언어 모델·프롬프트 엔지니어링 중심의 논문 리뷰와 스터디 노트를 꾸준히 기록합니다.",
       "learn2.h": "자기주도 학습",
@@ -68,6 +71,22 @@
       "music.sub": "코딩할 때 듣는 무드",
       "music.desc": "Web Audio API로 실시간 생성되는 로파이 루프입니다. 음원 파일 없이, 브라우저가 직접 연주해요.",
       "music.play": "재생", "music.pause": "일시정지",
+      "pg.h1": "Playground",
+      "pg.lead": "쉬어가는 공간. 반응속도를 재보고, 흔적을 남겨보세요.",
+      "game.sub": "반응속도 테스트",
+      "game.desc": "화면이 파란색으로 바뀌는 순간 클릭하세요. 데이터 사이언티스트의 반사신경을 측정합니다.",
+      "game.start": "시작",
+      "game.wait": "초록색이 파란색으로 바뀌면 클릭!",
+      "game.ready": "준비…",
+      "game.now": "지금 클릭!",
+      "game.tooearly": "너무 빨라요! 다시 시도하세요.",
+      "game.result": "당신의 반응속도",
+      "game.again": "다시 하기",
+      "game.best": "최고 기록",
+      "game.rank.s": "치타급 반사신경 🐆",
+      "game.rank.a": "e스포츠 프로급 ⚡",
+      "game.rank.b": "평균 이상, 훌륭해요 👍",
+      "game.rank.c": "커피 한 잔 하고 올까요? ☕",
       "gb.title": "방명록",
       "gb.lead": "다녀간 흔적을 남겨주세요.",
       "gb.ph.name": "이름",
@@ -82,7 +101,7 @@
       "egg.ssafy": "🎓 SSAFY 코드 감지! 반갑습니다, 혹시 동기님?"
     },
     en: {
-      "nav.home": "Home", "nav.projects": "Projects", "nav.about": "About",
+      "nav.home": "Home", "nav.projects": "Projects", "nav.about": "About", "nav.playground": "Playground",
       "idx.h1": "Understanding data in context,<br>building models that fit.",
       "idx.lead": "Big Data Science major at Korea University. I turn analysis, modeling, and NLP into results that matter.",
       "idx.cta.projects": "View projects",
@@ -123,7 +142,10 @@
       "tl2.b2": "Coursework: ML, multivariate analysis, time series, deep learning, RL",
       "tl2.date": "2020.03 — 2026.06 (expected)",
       "tl3.h": "Florida Atlantic University", "tl3.org": "Exchange student · College of Engineering & CS",
+      "tl4.h": "SSAFY (Samsung SW·AI Academy for Youth)", "tl4.org": "16th cohort, Data Track · Daejeon campus",
+      "tl4.b1": "Immersive program centered on hands-on data analysis and AI projects",
       "learn.title": "Continuous Learning",
+      "learn.blog": "Visit the blog",
       "learn1.h": "Technical Blog · 60+ posts",
       "learn1.p": "Ongoing paper reviews and study notes on NLP, language models, and prompt engineering.",
       "learn2.h": "Self-directed study",
@@ -137,6 +159,22 @@
       "music.sub": "What coding sounds like",
       "music.desc": "A lo-fi loop generated in real time with the Web Audio API — no audio files, your browser plays it live.",
       "music.play": "Play", "music.pause": "Pause",
+      "pg.h1": "Playground",
+      "pg.lead": "A place to unwind. Test your reflexes, then leave a note.",
+      "game.sub": "Reaction Time Test",
+      "game.desc": "Click the moment the screen turns blue. Measuring a data scientist's reflexes.",
+      "game.start": "Start",
+      "game.wait": "Click when green turns blue!",
+      "game.ready": "Ready…",
+      "game.now": "Click now!",
+      "game.tooearly": "Too soon! Try again.",
+      "game.result": "Your reaction time",
+      "game.again": "Try again",
+      "game.best": "Best",
+      "game.rank.s": "Cheetah reflexes 🐆",
+      "game.rank.a": "Esports-pro tier ⚡",
+      "game.rank.b": "Above average, nice 👍",
+      "game.rank.c": "Maybe grab a coffee? ☕",
       "gb.title": "Guestbook",
       "gb.lead": "Leave a note that you were here.",
       "gb.ph.name": "Name",
@@ -459,6 +497,76 @@
     setLabel();
   }
 
+  /* ---------------- reaction-time game (playground) ---------------- */
+  function initGame() {
+    var pad = $("#game-pad");
+    if (!pad) return;
+    var state = "idle", t0 = 0, timer = null;
+    var BEST_KEY = "game.best.v1";
+    var elMsg = $("#game-msg"), elSub = $("#game-sub"), elBest = $("#game-best");
+
+    function best() { try { return parseInt(localStorage.getItem(BEST_KEY) || "0", 10); } catch (e) { return 0; } }
+    function showBest() {
+      var b = best();
+      if (elBest) elBest.textContent = b ? (I18N[lang]["game.best"] + " · " + b + "ms") : "";
+    }
+    function rank(ms) {
+      var k = ms < 220 ? "game.rank.s" : ms < 300 ? "game.rank.a" : ms < 400 ? "game.rank.b" : "game.rank.c";
+      return I18N[lang][k];
+    }
+    function setPad(bg, msg, sub) {
+      pad.style.background = bg;
+      if (elMsg) elMsg.textContent = msg;
+      if (elSub) elSub.innerHTML = sub || "";
+    }
+    var C = { idle: "#0066cc", wait: "#1f8f5f", now: "#0066cc", early: "#c0392b" };
+
+    function toIdle() {
+      state = "idle";
+      setPad(C.idle, I18N[lang]["game.start"], I18N[lang]["game.desc"]);
+      showBest();
+    }
+    function arm() {
+      state = "wait";
+      setPad(C.wait, I18N[lang]["game.ready"], I18N[lang]["game.wait"]);
+      var delay = 1200 + Math.random() * 2800;
+      timer = setTimeout(function () {
+        state = "now"; t0 = performance.now();
+        setPad(C.now, I18N[lang]["game.now"], "");
+      }, delay);
+    }
+    function click() {
+      if (state === "idle") { arm(); return; }
+      if (state === "wait") {
+        clearTimeout(timer); state = "early";
+        setPad(C.early, I18N[lang]["game.tooearly"], I18N[lang]["game.again"]);
+        return;
+      }
+      if (state === "early") { toIdle(); return; }
+      if (state === "now") {
+        var ms = Math.round(performance.now() - t0);
+        state = "done";
+        var b = best();
+        if (!b || ms < b) { try { localStorage.setItem(BEST_KEY, String(ms)); } catch (e) {} }
+        setPad(C.idle, ms + "ms", rank(ms) + " · " + I18N[lang]["game.again"]);
+        showBest();
+        return;
+      }
+      if (state === "done") { toIdle(); return; }
+    }
+    pad.addEventListener("click", click);
+    pad.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); click(); }
+    });
+    document.addEventListener("langchange", function () {
+      if (state === "idle") toIdle();
+      else if (state === "early") setPad(C.early, I18N[lang]["game.tooearly"], I18N[lang]["game.again"]);
+      else if (state === "wait") setPad(C.wait, I18N[lang]["game.ready"], I18N[lang]["game.wait"]);
+      else showBest();
+    });
+    toIdle();
+  }
+
   /* ---------------- easter eggs ---------------- */
   function toast(msg) {
     var t = document.createElement("div");
@@ -511,6 +619,7 @@
     initProgress();
     initModal();
     initGuestbook();
+    initGame();
     initTimeline();
     initMusic();
     initEggs();
