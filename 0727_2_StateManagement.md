@@ -624,7 +624,7 @@ Vue router를 통해 특정 URL에 접근할 때 **다른 URL로 리다이렉트
 |---|---|
 | **Globally** (전역 가드) | 애플리케이션 전역에서 모든 라우트 전환에 적용 |
 | **Per-route** (라우터 가드) | 특정 라우트에만 적용 |
-| **In-component** (컴포넌트 가드) | 컴포넌트 내에서만 적용 |
+| **In-component** (컴포넌트 가드) | 컴포넌트 내에서만 적용 -> confirm으로 진짜? 하고 물어봄 ㅇㅇ|
 
 문서: <https://router.vuejs.org/guide/advanced/navigation-guards.html>
 
