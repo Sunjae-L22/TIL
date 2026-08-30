@@ -1,7 +1,7 @@
 # Cookie & Session
 
 > 출처: `16기_데이터트랙_0803_Django_Authentication.pdf` (총 103페이지) · 정리일: 2026-08-03
-> 시리즈: **01 Cookie & Session** · [02 Authentication with DRF](django-authentication-02-authentication-with-drf.md)
+> 시리즈: **01 Cookie & Session** · [02 Authentication with DRF](0803_django-authentication-02-authentication-with-drf.md)
 > 페이지 표기는 PDF 물리 페이지 기준. 슬라이드 인쇄 번호와 동일하다.
 
 ## 한눈에 보기

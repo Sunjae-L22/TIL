@@ -1,6 +1,6 @@
 # 기능 구현과 Django shortcuts
 
-> 시리즈: [01 N:1 관계](Django-Relationships-01-N대1관계.md) · [02 DRF with N:1](Django-Relationships-02-DRF-N대1.md) · [03 M:N 관계](Django-Relationships-03-N대M관계.md) · **04 실습과 shortcuts**
+> 시리즈: [01 N:1 관계](0731_Django-Relationships-01-N대1관계.md) · [02 DRF with N:1](0731_Django-Relationships-02-DRF-N대1.md) · [03 M:N 관계](0731_Django-Relationships-03-N대M관계.md) · **04 실습과 shortcuts**
 
 > 출처: `16기_데이터트랙_0731_Django_Relationships.pdf` (총 119페이지) · 정리일: 2026-07-31
 > 페이지 표기는 PDF 기준

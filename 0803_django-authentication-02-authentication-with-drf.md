@@ -1,7 +1,7 @@
 # Authentication with DRF
 
 > 출처: `16기_데이터트랙_0803_Django_Authentication.pdf` (총 103페이지) · 정리일: 2026-08-03
-> 시리즈: [01 Cookie & Session](django-authentication-01-cookie-session.md) · **02 Authentication with DRF**
+> 시리즈: [01 Cookie & Session](0803_django-authentication-01-cookie-session.md) · **02 Authentication with DRF**
 > 페이지 표기는 PDF 물리 페이지 기준.
 
 ## 한눈에 보기

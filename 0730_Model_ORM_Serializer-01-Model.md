@@ -1,6 +1,6 @@
 # Model & ORM & Serializer — 01. Model
 
-> 시리즈: **01 Model** · [02 ORM](16기_데이터트랙_0730_Model_ORM_Serializer-02-ORM.md) · [03 Serializer](16기_데이터트랙_0730_Model_ORM_Serializer-03-Serializer.md)
+> 시리즈: **01 Model** · [02 ORM](0730_Model_ORM_Serializer-02-ORM.md) · [03 Serializer](0730_Model_ORM_Serializer-03-Serializer.md)
 > 출처: `16기_데이터트랙_0730_Model_ORM_Serializer.pdf` (총 133페이지) · 정리일: 2026-07-30
 > 페이지 표기는 PDF 기준 (슬라이드 인쇄 번호와 동일)
 
