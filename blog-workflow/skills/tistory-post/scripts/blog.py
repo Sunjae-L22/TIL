@@ -70,6 +70,11 @@ def normalized(s):
     return re.sub(r'[^\w]', '', unicodedata.normalize('NFC', s).lower())
 
 
+def is_til_note(name):
+    path = Path(name)
+    return len(path.parts) == 1 and path.suffix.lower() == '.md' and path.name.upper() not in {'AGENTS.MD', 'README.MD'}
+
+
 def catalog(args):
     cfg = config(args.config)
     articles, errors = {}, []
@@ -100,6 +105,7 @@ def catalog(args):
             errors.append({'source': kind, 'error': str(e)})
     notes = []
     for file in sorted(cfg['notes_root'].glob('*.md')):
+        if not is_til_note(file.name): continue
         content = file.read_text()
         m = re.search(r'^#\s+(.+)', content, re.M)
         title = m[1] if m else file.stem

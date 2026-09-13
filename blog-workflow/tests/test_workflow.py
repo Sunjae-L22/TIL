@@ -44,6 +44,18 @@ class WorkflowTests(unittest.TestCase):
     def args(self, status='draft', url='https://test.tistory.com/manage/post/1'):
         return argparse.Namespace(directory=str(self.post),config=str(self.cfg),status=status,url=url,observation='Fixture saved and reopened')
 
+    def test_catalog_excludes_workspace_instructions(self):
+        for name in ['AGENTS.md','README.md','0913_TIL.md']:
+            (self.root/name).write_text('# '+name+'\n')
+        def feed(url):
+            body=b'<urlset />' if url.endswith('sitemap.xml') else b'<rss><channel /></rss>'
+            return body,url
+        with patch.object(blog,'fetch',side_effect=feed):
+            result=blog.catalog(argparse.Namespace(config=str(self.cfg)))
+        self.assertEqual(result['notes'],1)
+        notes=json.loads((self.root/'state/catalog.json').read_text())['notes']
+        self.assertEqual(notes[0]['path'],'0913_TIL.md')
+
     def test_real_markdown_code_containers(self):
         for text in ['```python\nprint(1)\n```\n','> ```python\n> print(1)\n> ```\n','    print(1)\n']:
             self.assertFalse(blog.lint(text)['errors'])

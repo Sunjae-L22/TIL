@@ -14,7 +14,7 @@ import tempfile
 from urllib.parse import unquote, urlsplit
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from blog import lint, tokens_of
+from blog import is_til_note, lint, tokens_of
 
 
 class SyncError(RuntimeError):
@@ -107,7 +107,7 @@ def inspect_files(root, names):
     notes, assets = [], []
     for name in files:
         path = Path(name)
-        if len(path.parts) == 1 and path.suffix.lower() == '.md':
+        if is_til_note(name):
             notes.append(name)
         elif path.parts[0] in ('img', 'images') and path.suffix.lower() in ('.png', '.jpg', '.jpeg', '.webp', '.gif', '.svg'):
             assets.append(name)

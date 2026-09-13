@@ -84,6 +84,12 @@ class GitSyncTests(unittest.TestCase):
         (self.repo/'outside.md').symlink_to(self.cfg)
         with self.assertRaises(gs.SyncError):gs.plan(self.cfg,['outside.md'])
 
+    def test_workspace_instructions_are_not_auto_published_as_notes(self):
+        for name in ['AGENTS.md','README.md']:
+            (self.repo/name).write_text('Repository instructions\n')
+            with self.assertRaises(gs.SyncError):gs.plan(self.cfg,[name])
+        self.assertEqual(self.initial,self.tip())
+
     def test_invalid_markdown_does_not_commit(self):
         names=self.new();(self.repo/names[0]).write_text('```python\nprint(1)\n')
         with self.assertRaises(gs.SyncError):gs.sync(self.cfg,names,'invalid')
