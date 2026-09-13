@@ -1,0 +1,13 @@
+.cache/
+state/private/
+**/pages/
+**/extracted/
+**/source-review/
+__pycache__/
+*.pyc
+state/.ledger.lock
+
+# Local drafts, source evidence, browser observations, and account-derived state
+/posts/
+/state/
+/validation/

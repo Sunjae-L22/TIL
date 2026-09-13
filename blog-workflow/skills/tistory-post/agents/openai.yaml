@@ -1,0 +1,4 @@
+interface:
+  display_name: "근거 기반 티스토리 운영"
+  short_description: "TIL을 검증된 글과 이미지로 만들고 발행 주소와 이력을 함께 관리합니다."
+  default_prompt: "Use $tistory-post to complete the requested study or blog workflow with traceable sources."

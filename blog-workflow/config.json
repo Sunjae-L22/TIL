@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "blog_url": "https://it-study-2002.tistory.com",
+  "notes_root": "..",
+  "state_dir": "state",
+  "posts_dir": "posts",
+  "language": "ko",
+  "tone": "설명은 자연스러운 -다체. 독자의 질문에 바로 답하고 실제 근거와 예제를 연결한다.",
+  "public_attribution": "공개 출처와 저자 표기를 보존한다. 내부 자료 원문과 개인 경로는 발행 패키지에 포함하지 않는다.",
+  "publication_mode": "draft",
+  "schedule": null,
+  "analytics": {
+    "search_console": "not_connected",
+    "adsense": "not_verified"
+  },
+  "git_sync": {
+    "enabled": true,
+    "remote": "origin",
+    "expected_url": "https://github.com/Sunjae-L22/TIL.git",
+    "branch": "master",
+    "trigger": "after_validated_til",
+    "selection": "explicit_completed_notes_and_referenced_images"
+  }
+}

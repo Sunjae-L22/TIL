@@ -1,0 +1,4 @@
+interface:
+  display_name: "근거 기반 PDF 공부 노트"
+  short_description: "PDF 페이지와 실제 판독 범위를 추적하고 검증 가능한 공부 노트를 만듭니다."
+  default_prompt: "Use $pdf-study-notes to complete the requested study or blog workflow with traceable sources."
