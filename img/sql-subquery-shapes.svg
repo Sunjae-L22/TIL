@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
+<rect width="1000" height="1000" fill="#f4f7fb"/>
+<text x="45" y="60" font-family="Arial, Apple SD Gothic Neo" font-size="23" font-weight="700" fill="#4271cc">02 / SUBQUERY</text>
+<text x="45" y="116" font-family="Arial, Apple SD Gothic Neo" font-size="39" font-weight="700" fill="#172a46">필요한 결과의 모양부터 고른다</text>
+<text x="45" y="160" font-family="Arial, Apple SD Gothic Neo" font-size="24" font-weight="400" fill="#52647a">다중 행과 다중 열은 서로 다른 분류 기준이다.</text>
+<rect x="45" y="200" width="910" height="128" rx="16" fill="#ffffff" stroke="#d9e3ef"/>
+<rect x="45" y="200" width="240" height="128" rx="16" fill="#e7effe" stroke="#c6d5f5"/>
+<text x="66" y="244" font-family="Arial, Apple SD Gothic Neo" font-size="28" font-weight="700" fill="#172a46">한 값</text>
+<text x="66" y="287" font-family="Arial, Apple SD Gothic Neo" font-size="23" font-weight="700" fill="#255bbe">스칼라</text>
+<text x="315" y="243" font-family="Arial, Apple SD Gothic Neo" font-size="27" font-weight="700" fill="#172a46">1열 · 최대 1행</text>
+<text x="315" y="288" font-family="Arial, Apple SD Gothic Neo" font-size="24" font-weight="400" fill="#52647a">0행 → NULL / 2행 이상 → 오류</text>
+<rect x="45" y="345" width="910" height="128" rx="16" fill="#ffffff" stroke="#d9e3ef"/>
+<rect x="45" y="345" width="240" height="128" rx="16" fill="#e7effe" stroke="#c6d5f5"/>
+<text x="66" y="389" font-family="Arial, Apple SD Gothic Neo" font-size="28" font-weight="700" fill="#172a46">값 목록</text>
+<text x="66" y="432" font-family="Arial, Apple SD Gothic Neo" font-size="23" font-weight="700" fill="#255bbe">IN</text>
+<text x="315" y="388" font-family="Arial, Apple SD Gothic Neo" font-size="27" font-weight="700" fill="#172a46">1열 · 0행 이상</text>
+<text x="315" y="433" font-family="Arial, Apple SD Gothic Neo" font-size="24" font-weight="400" fill="#52647a">여러 값 중 같은 값이 있는가?</text>
+<rect x="45" y="490" width="910" height="128" rx="16" fill="#ffffff" stroke="#d9e3ef"/>
+<rect x="45" y="490" width="240" height="128" rx="16" fill="#e7effe" stroke="#c6d5f5"/>
+<text x="66" y="534" font-family="Arial, Apple SD Gothic Neo" font-size="28" font-weight="700" fill="#172a46">행의 존재</text>
+<text x="66" y="577" font-family="Arial, Apple SD Gothic Neo" font-size="16" font-weight="700" fill="#255bbe">EXISTS / NOT EXISTS</text>
+<text x="315" y="533" font-family="Arial, Apple SD Gothic Neo" font-size="27" font-weight="700" fill="#172a46">0행인지, 1행 이상인지</text>
+<text x="315" y="578" font-family="Arial, Apple SD Gothic Neo" font-size="24" font-weight="400" fill="#52647a">SELECT 목록의 값 자체는 비교하지 않음</text>
+<rect x="45" y="635" width="910" height="128" rx="16" fill="#ffffff" stroke="#d9e3ef"/>
+<rect x="45" y="635" width="240" height="128" rx="16" fill="#e7effe" stroke="#c6d5f5"/>
+<text x="66" y="679" font-family="Arial, Apple SD Gothic Neo" font-size="28" font-weight="700" fill="#172a46">값의 조합</text>
+<text x="66" y="722" font-family="Arial, Apple SD Gothic Neo" font-size="23" font-weight="700" fill="#255bbe">(a, b) IN (...)</text>
+<text x="315" y="678" font-family="Arial, Apple SD Gothic Neo" font-size="27" font-weight="700" fill="#172a46">2열 이상 · 좌우 열 수 일치</text>
+<text x="315" y="723" font-family="Arial, Apple SD Gothic Neo" font-size="24" font-weight="400" fill="#52647a">= 비교는 최대 1행 / IN은 여러 행 허용</text>
+<rect x="45" y="780" width="910" height="128" rx="16" fill="#ffffff" stroke="#d9e3ef"/>
+<rect x="45" y="780" width="240" height="128" rx="16" fill="#e7effe" stroke="#c6d5f5"/>
+<text x="66" y="824" font-family="Arial, Apple SD Gothic Neo" font-size="28" font-weight="700" fill="#172a46">중간 테이블</text>
+<text x="66" y="867" font-family="Arial, Apple SD Gothic Neo" font-size="23" font-weight="700" fill="#255bbe">FROM (...) AS s</text>
+<text x="315" y="823" font-family="Arial, Apple SD Gothic Neo" font-size="27" font-weight="700" fill="#172a46">행과 열을 가진 조회 결과</text>
+<text x="315" y="868" font-family="Arial, Apple SD Gothic Neo" font-size="24" font-weight="400" fill="#52647a">집계 결과에 이름을 붙여 JOIN</text>
+<text x="45" y="972" font-family="Arial, Apple SD Gothic Neo" font-size="23" font-weight="400" fill="#ad651b">NOT IN 목록에 NULL이 있으면 미매칭 값도 UNKNOWN이 될 수 있다.</text>
+</svg>

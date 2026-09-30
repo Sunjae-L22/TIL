@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
+<rect width="1000" height="1000" fill="#f4f7fb"/>
+<text x="45" y="60" font-family="Arial, Apple SD Gothic Neo" font-size="23" font-weight="700" fill="#4271cc">01 / JOIN</text>
+<text x="45" y="116" font-family="Arial, Apple SD Gothic Neo" font-size="39" font-weight="700" fill="#172a46">같은 주문, 다른 보존 기준</text>
+<text x="45" y="160" font-family="Arial, Apple SD Gothic Neo" font-size="24" font-weight="400" fill="#52647a">ON c.customer_id = o.customer_id</text>
+<rect x="45" y="200" width="910" height="175" rx="16" fill="#ffffff" stroke="#d9e3ef"/>
+<text x="70" y="241" font-family="Arial, Apple SD Gothic Neo" font-size="27" font-weight="700" fill="#172a46">입력: 주문 5건 · 고객 4명</text>
+<text x="70" y="290" font-family="Arial, Apple SD Gothic Neo" font-size="29" font-weight="400" fill="#172a46">101 → 1    102 → 1    103 → 2</text>
+<text x="70" y="335" font-family="Arial, Apple SD Gothic Neo" font-size="29" font-weight="400" fill="#172a46">104 → NULL    105 → 2</text>
+<rect x="45" y="410" width="435" height="440" rx="16" fill="#ffffff" stroke="#d9e3ef"/>
+<text x="70" y="460" font-family="Arial, Apple SD Gothic Neo" font-size="32" font-weight="700" fill="#255bbe">INNER JOIN</text>
+<text x="70" y="510" font-family="Arial, Apple SD Gothic Neo" font-size="25" font-weight="400" fill="#65758d">order_id       name</text>
+<text x="75" y="561" font-family="Arial, Apple SD Gothic Neo" font-size="29" font-weight="400" fill="#172a46">101</text>
+<text x="255" y="561" font-family="Arial, Apple SD Gothic Neo" font-size="29" font-weight="400" fill="#172a46">지우</text>
+<text x="75" y="615" font-family="Arial, Apple SD Gothic Neo" font-size="29" font-weight="400" fill="#172a46">102</text>
+<text x="255" y="615" font-family="Arial, Apple SD Gothic Neo" font-size="29" font-weight="400" fill="#172a46">지우</text>
+<text x="75" y="669" font-family="Arial, Apple SD Gothic Neo" font-size="29" font-weight="400" fill="#172a46">103</text>
+<text x="255" y="669" font-family="Arial, Apple SD Gothic Neo" font-size="29" font-weight="400" fill="#172a46">다온</text>
+<text x="75" y="723" font-family="Arial, Apple SD Gothic Neo" font-size="29" font-weight="400" fill="#172a46">105</text>
+<text x="255" y="723" font-family="Arial, Apple SD Gothic Neo" font-size="29" font-weight="400" fill="#172a46">다온</text>
+<rect x="520" y="410" width="435" height="440" rx="16" fill="#ffffff" stroke="#d9e3ef"/>
+<text x="545" y="460" font-family="Arial, Apple SD Gothic Neo" font-size="32" font-weight="700" fill="#255bbe">LEFT JOIN</text>
+<text x="545" y="510" font-family="Arial, Apple SD Gothic Neo" font-size="25" font-weight="400" fill="#65758d">order_id       name</text>
+<text x="550" y="561" font-family="Arial, Apple SD Gothic Neo" font-size="29" font-weight="400" fill="#172a46">101</text>
+<text x="730" y="561" font-family="Arial, Apple SD Gothic Neo" font-size="29" font-weight="400" fill="#172a46">지우</text>
+<text x="550" y="615" font-family="Arial, Apple SD Gothic Neo" font-size="29" font-weight="400" fill="#172a46">102</text>
+<text x="730" y="615" font-family="Arial, Apple SD Gothic Neo" font-size="29" font-weight="400" fill="#172a46">지우</text>
+<text x="550" y="669" font-family="Arial, Apple SD Gothic Neo" font-size="29" font-weight="400" fill="#172a46">103</text>
+<text x="730" y="669" font-family="Arial, Apple SD Gothic Neo" font-size="29" font-weight="400" fill="#172a46">다온</text>
+<rect x="535" y="688" width="405" height="48" rx="16" fill="#fff0d5" stroke="#eac887"/>
+<text x="550" y="723" font-family="Arial, Apple SD Gothic Neo" font-size="29" font-weight="400" fill="#172a46">104</text>
+<text x="730" y="723" font-family="Arial, Apple SD Gothic Neo" font-size="29" font-weight="400" fill="#ad651b">NULL</text>
+<text x="550" y="777" font-family="Arial, Apple SD Gothic Neo" font-size="29" font-weight="400" fill="#172a46">105</text>
+<text x="730" y="777" font-family="Arial, Apple SD Gothic Neo" font-size="29" font-weight="400" fill="#172a46">다온</text>
+<text x="65" y="909" font-family="Arial, Apple SD Gothic Neo" font-size="27" font-weight="700" fill="#172a46">INNER: 매칭된 4행</text>
+<text x="540" y="909" font-family="Arial, Apple SD Gothic Neo" font-size="27" font-weight="700" fill="#172a46">LEFT: 미매칭 포함 5행</text>
+<text x="45" y="962" font-family="Arial, Apple SD Gothic Neo" font-size="24" font-weight="400" fill="#52647a">같은 고객이 여러 주문과 연결되면 이름도 여러 행에 나타난다.</text>
+</svg>

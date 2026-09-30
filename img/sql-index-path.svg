@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000">
+<rect width="1000" height="1000" fill="#f4f7fb"/>
+<text x="45" y="60" font-family="Arial, Apple SD Gothic Neo" font-size="23" font-weight="700" fill="#4271cc">03 / INDEX</text>
+<text x="45" y="116" font-family="Arial, Apple SD Gothic Neo" font-size="39" font-weight="700" fill="#172a46">복합 키 순서로 탐색 범위를 좁힌다</text>
+<text x="45" y="160" font-family="Arial, Apple SD Gothic Neo" font-size="24" font-weight="400" fill="#52647a">INDEX (customer_id, status) · B+tree 계열 개념도</text>
+<rect x="270" y="220" width="460" height="100" rx="16" fill="#e7effe" stroke="#bdd0f0"/>
+<text x="300" y="264" font-family="Arial, Apple SD Gothic Neo" font-size="29" font-weight="700" fill="#172a46">내부 노드: 키 범위 분기</text>
+<text x="300" y="303" font-family="Arial, Apple SD Gothic Neo" font-size="24" font-weight="400" fill="#52647a">고객 번호 → 상태 순서</text>
+<path d="M500,320 L195,420" fill="none" stroke="#94a7bf" stroke-width="4"/>
+<path d="M500,320 L500,420" fill="none" stroke="#3f72d4" stroke-width="4"/>
+<path d="M500,320 L805,420" fill="none" stroke="#94a7bf" stroke-width="4"/>
+<rect x="45" y="420" width="300" height="195" rx="16" fill="#ffffff" stroke="#d9e3ef"/>
+<text x="65" y="465" font-family="Arial, Apple SD Gothic Neo" font-size="26" font-weight="700" fill="#172a46">customer NULL</text>
+<text x="65" y="517" font-family="Arial, Apple SD Gothic Neo" font-size="25" font-weight="400" fill="#52647a">paid · 104</text>
+<rect x="350" y="420" width="300" height="195" rx="16" fill="#ffffff" stroke="#3f72d4"/>
+<text x="370" y="465" font-family="Arial, Apple SD Gothic Neo" font-size="26" font-weight="700" fill="#172a46">customer 1</text>
+<text x="370" y="517" font-family="Arial, Apple SD Gothic Neo" font-size="25" font-weight="400" fill="#255bbe">paid · 101</text>
+<text x="370" y="567" font-family="Arial, Apple SD Gothic Neo" font-size="25" font-weight="400" fill="#255bbe">pending · 102</text>
+<rect x="655" y="420" width="300" height="195" rx="16" fill="#ffffff" stroke="#d9e3ef"/>
+<text x="675" y="465" font-family="Arial, Apple SD Gothic Neo" font-size="26" font-weight="700" fill="#172a46">customer 2</text>
+<text x="675" y="517" font-family="Arial, Apple SD Gothic Neo" font-size="25" font-weight="400" fill="#52647a">paid · 103</text>
+<text x="675" y="567" font-family="Arial, Apple SD Gothic Neo" font-size="25" font-weight="400" fill="#52647a">paid · 105</text>
+<path d="M345,575 L350,575" fill="none" stroke="#94a7bf" stroke-width="4"/>
+<path d="M650,575 L655,575" fill="none" stroke="#94a7bf" stroke-width="4"/>
+<rect x="45" y="665" width="910" height="105" rx="16" fill="#e7effe" stroke="#bdd0f0"/>
+<text x="70" y="708" font-family="Arial, Apple SD Gothic Neo" font-size="28" font-weight="700" fill="#255bbe">WHERE customer_id = 1 AND status = &#x27;paid&#x27;</text>
+<text x="70" y="747" font-family="Arial, Apple SD Gothic Neo" font-size="25" font-weight="400" fill="#172a46">먼저 고객 1의 범위, 그 안에서 paid를 찾는다 → 주문 101</text>
+<rect x="45" y="810" width="910" height="130" rx="16" fill="#ffffff" stroke="#d9e3ef"/>
+<text x="70" y="854" font-family="Arial, Apple SD Gothic Neo" font-size="28" font-weight="700" fill="#172a46">읽기: 후보 범위를 줄일 수 있다</text>
+<text x="70" y="902" font-family="Arial, Apple SD Gothic Neo" font-size="25" font-weight="400" fill="#52647a">쓰기: INSERT · UPDATE · DELETE 때 인덱스 유지 비용이 든다</text>
+<text x="45" y="980" font-family="Arial, Apple SD Gothic Neo" font-size="23" font-weight="400" fill="#52647a">실제 노드 배치·높이가 아닌 개념도. 사용 여부는 EXPLAIN으로 확인한다.</text>
+</svg>
